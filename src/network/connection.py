@@ -30,7 +30,6 @@ def add_active_connection(tree: Tree, settings: dict,
 
         for name, value in val.items():
             node3: Tree = dict(
-
                 node_id="{}: {}".format(str(name), str(value)),
                 children=[]
             )
