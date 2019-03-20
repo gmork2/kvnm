@@ -1,0 +1,79 @@
+[
+  {
+    "type": "string",
+    "title": "version",
+    "section": "info",
+    "disabled": true,
+    "key": "version"
+  },
+  {
+    "type": "string",
+    "title": "hostname",
+    "section": "info",
+    "disabled": true,
+    "key": "hostname"
+  },
+  {
+    "type": "string",
+    "title": "can modify",
+    "section": "info",
+    "disabled": true,
+    "key": "can_modify"
+  },
+  {
+    "type": "string",
+    "title": "networking enabled",
+    "section": "info",
+    "disabled": true,
+    "key": "networking_enabled"
+  },
+  {
+    "type": "string",
+    "title": "wireless enabled",
+    "section": "info",
+    "disabled": true,
+    "key": "wireless_enabled"
+  },
+  {
+    "type": "string",
+    "title": "wireless hw enabled",
+    "section": "info",
+    "disabled": true,
+    "key": "wireless_hw_enabled"
+  },
+  {
+    "type": "string",
+    "title": "wwan enabled",
+    "section": "info",
+    "disabled": true,
+    "key": "wwan_enabled"
+  },
+  {
+    "type": "string",
+    "title": "wwan_hw_enabled",
+    "section": "info",
+    "disabled": true,
+    "key": "wwan_hw_enabled"
+  },
+  {
+    "type": "string",
+    "title": "wimax enabled",
+    "section": "info",
+    "disabled": true,
+    "key": "wimax_enabled"
+  },
+  {
+    "type": "string",
+    "title": "wimax hw enabled",
+    "section": "info",
+    "disabled": true,
+    "key": "wimax_hw_enabled"
+  },
+  {
+    "type": "string",
+    "title": "overall state",
+    "section": "info",
+    "disabled": true,
+    "key": "overall_state"
+  }
+]
