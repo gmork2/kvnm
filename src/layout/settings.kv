@@ -1,0 +1,43 @@
+#:import path os.path
+
+
+<SettingTree>:
+    Switch:
+        text: 'Details'
+        pos: root.pos
+        padding: 10, 10
+
+<SettingTable>:
+    Switch:
+        text: 'Details'
+        pos: root.pos
+        padding: 10, 10
+
+<TreeView>
+    size_hint: 1, None
+
+<TreeViewLabel>
+    padding: 5, 5
+
+<TableRow>:
+    size_hint: 1, None
+    size: self.width, 40
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<TableCell>:
+    font_size: 14
+    background_color:  [0, 0, 0, 1]
+    foreground_color: [1., 1., 1., 1.]
+    # TODO: column.size_x, 1
+    size_hint: 1, 1
+    hint_text: self.column.hint_text
+    multiline: False
+    write_tab: False
+    # TODO read BorderImage doc for border values
+    #border: 1, 1, 1, 1
+    readonly: True

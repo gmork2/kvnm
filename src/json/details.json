@@ -1,0 +1,9 @@
+[
+  {
+    "type": "string",
+    "title": "version",
+    "section": "info",
+    "disabled": true,
+    "key": "version"
+  }
+]
