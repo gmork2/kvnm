@@ -30,4 +30,4 @@ Python dependencies:
 ## License
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE
-Version 3 - see the [LICENSE.md](LICENSE.md) file for details.
+Version 3 - see the [LICENSE](LICENSE) file for details.
