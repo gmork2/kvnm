@@ -1,19 +1,22 @@
 # KvNM
 
-Simple network manager used for demonstration purposes. KvNM aims to provide
-useful and detailed information about your system and network,
-however, its current functionalities are very limited and have not been tested.
+Simple network manager used for demonstration purposes.
 
 ![photo](images/kvnm.png)
 
 ## Getting Started
+KvNM aims to provide useful and detailed information about your system
+and network, however its current functionalities are very limited.
 
 ### Requirements
-* Python 3.6
-* [Kivy](https://kivy.org/docs/gettingstarted/installation.html) 1.10.1 and Cython 2.25.2
-* [PyGI](https://pygobject.readthedocs.io/) 3.26.1 provides bindings for GObject.
+* Python 3.6+
+* [Kivy](https://kivy.org/docs/gettingstarted/installation.html)
+1.10.1 and Cython 2.25.2
+* [PyGI](https://pygobject.readthedocs.io/) 3.26.1 provides bindings
+for GObject.
 * [GLib](https://developer.gnome.org/glib/) 2.46 and
-[girepository](https://wiki.gnome.org/Projects/GObjectIntrospection) for object publication support.
+[girepository](https://wiki.gnome.org/Projects/GObjectIntrospection)
+for object publication support.
 
 ### Installation
 Python dependencies:
