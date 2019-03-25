@@ -39,9 +39,7 @@ def _get_data(instance: "SettingTree") -> Tree:
     :param instance:
     :return:
     """
-    path = instance.value.split('.')
-    func = path.pop()
-    module = ".".join(path)
+    module, func = instance.value.rsplit('.', 1)
 
     Factory.register(func, module=module)
     return getattr(Factory, func)()
