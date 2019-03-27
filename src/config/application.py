@@ -11,7 +11,11 @@ from .settings import CustomSettings
 from network.info import get_general_info, get_permissions
 from .defaults import *
 
-MESSAGE = "Thanks for use KvNM"
+NOTIFICATION_APP = 'kvnm'
+NOTIFICATION_ID = 1
+NOTIFICATION_SUMMARY = 'KvNM'
+NOTIFICATION_MSG = "Thanks for use KvNM"
+
 GITHUB_URL = 'https://github.com/gmork2/kvnm'
 
 OPTIONS = [
@@ -38,8 +42,9 @@ class Application(App):
         path = os.path.join(BASE_DIR, 'application.ini')
 
         if not os.path.exists(path):
-            self.msg_id = 1
-            self.msg: str = MESSAGE
+            self.msg_id = NOTIFICATION_ID
+            self.summary = NOTIFICATION_SUMMARY
+            self.msg: str = NOTIFICATION_MSG
 
             Clock.schedule_once(self.notify, 1)
 
@@ -103,7 +108,7 @@ class Application(App):
         notifications = bus.get('.Notifications')
 
         notifications.Notify(
-            'kvnm', self.msg_id, self.icon, "KVNM",
+            NOTIFICATION_APP, self.msg_id, self.icon, self.summary,
             self.msg, [], {}, 5000)
 
     def build_settings(self, settings: CustomSettings) -> None:
