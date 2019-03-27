@@ -7,6 +7,7 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
+from kivy.core.window import Keyboard
 from kivy.properties import StringProperty, ObjectProperty
 
 Columns = Rows = List[Dict[str, str]]
@@ -29,11 +30,11 @@ class TableColumn(Widget):
     data access, and data updates.
     Assumes that underlying data is accessable via data[key].
     """
-    title = StringProperty()
-    hint_text = StringProperty()
+    title: str = StringProperty()
+    hint_text: str = StringProperty()
 
     def __init__(self, title: str, key: str,
-                 update_function: Callable = (lambda row, new_value: None),
+                 update_function: Callable[["TableRow", "TableRow"], None] = (lambda row, new_value: None),
                  hint_text: str = ''):
         """
 
@@ -47,7 +48,7 @@ class TableColumn(Widget):
         self.update_function = update_function
         self.hint_text = hint_text
 
-    def get_cell(self, row) -> "TableCell":
+    def get_cell(self, row: "TableRow") -> "TableCell":
         """
 
         :param row:
@@ -55,7 +56,7 @@ class TableColumn(Widget):
         """
         return TableCell(self, row)
 
-    def on_cell_edit(self, row, new_value):
+    def on_cell_edit(self, row: "TableRow", new_value: "TableRow"):
         """
 
         :param row:
@@ -75,14 +76,14 @@ class TableRow(BoxLayout):
         :param table:
         :param index:
         """
-        super(TableRow, self).__init__(orientation='horizontal')
+        super().__init__(orientation='horizontal')
         self.table: TableView = table
-        self.index = index
+        self.index: int = index
 
         for col in table.columns:
             self.add_widget(col.get_cell(self))
 
-    def data(self, key):
+    def data(self, key: str):
         """
 
         :param key:
@@ -90,7 +91,7 @@ class TableRow(BoxLayout):
         """
         return self.table.data_rows[self.index][key]
 
-    def set_data(self, key, value):
+    def set_data(self, key: str, value: str):
         """
 
         :param key:
@@ -108,7 +109,7 @@ class TableRow(BoxLayout):
         for cell in self.children:
             cell.update()
 
-    def move_focus(self, index_diff, column):
+    def move_focus(self, index_diff: int, column: TableColumn):
         """
         Move focus from a cell in this row to the corresponding
         cell in the row with index_diff offset to this row.
@@ -119,7 +120,7 @@ class TableRow(BoxLayout):
         """
         self.table.set_focus(self.index + index_diff, column)
 
-    def focus_on_cell(self, column):
+    def focus_on_cell(self, column: TableColumn):
         """
 
         :param column:
@@ -149,7 +150,7 @@ class TableCell(TextInput):
     MOVEMENT_KEYS = {'up': -1, 'down': 1,
                      'pageup': -sys.maxsize, 'pagedown': sys.maxsize}
 
-    def __init__(self, column, row):
+    def __init__(self, column: TableColumn, row: TableRow):
         """
 
         :param column:
@@ -177,7 +178,7 @@ class TableCell(TextInput):
         """
         self.column.on_cell_edit(self.row, self.text)
 
-    def on_focus(self, instance, value):
+    def on_focus(self, instance: "TableCell", value: bool):
         """
 
         :param instance:
@@ -189,7 +190,7 @@ class TableCell(TextInput):
         else:
             self.update()
 
-    def keyboard_on_key_down(self, window, keycode, text, modifiers):
+    def keyboard_on_key_down(self, window: Keyboard, keycode: Tuple[int, str], text: str, modifiers: List):
         """
         Check for special navigation keys, otherwise call super.
 
@@ -213,7 +214,7 @@ class TableView(ScrollView):
     and each column to a specific attribute of the data points.
     Currently, each attribute is an editable field.
     """
-    def __init__(self, size, pos_hint):
+    def __init__(self, size: Tuple[int, int], pos_hint: Dict[str, str]):
         """
 
         :param size:
@@ -221,7 +222,6 @@ class TableView(ScrollView):
         """
         super(TableView, self).__init__(size_hint=(None, 1), size=size,
                                         pos_hint=pos_hint, do_scroll_x=False)
-
         self.layout = GridLayout(cols=1,
                                  size_hint=(None, None), width=size[0])
         self.layout.bind(width=self.setter('width'))
@@ -231,7 +231,7 @@ class TableView(ScrollView):
         self.layout_rows = []
         self.add_widget(self.layout)
 
-    def add_column(self, column):
+    def add_column(self, column: TableColumn):
         """
 
         :param column:
@@ -242,7 +242,7 @@ class TableView(ScrollView):
         for row in self.layout_rows:
             row.add_widget(column.get_cell(row))
 
-    def add_row(self, data):
+    def add_row(self, data: Dict[str, str]):
         """
 
         :param data:
@@ -253,7 +253,7 @@ class TableView(ScrollView):
         self.layout_rows.append(row)
         self.layout.add_widget(row)
 
-    def set_focus(self, row_index, column):
+    def set_focus(self, row_index: int, column: TableColumn):
         """
 
         :param row_index:
