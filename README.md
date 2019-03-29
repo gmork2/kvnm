@@ -19,6 +19,8 @@ for GObject.
 * [GLib](https://developer.gnome.org/glib/) 2.46 and
 [girepository](https://wiki.gnome.org/Projects/GObjectIntrospection)
 for object publication support.
+* [xclip](https://github.com/astrand/xclip) provider to X selections 
+("clipboard").
 
 ### Installation
 Python dependencies:
