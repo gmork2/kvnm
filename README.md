@@ -8,7 +8,7 @@ Simple network manager used for demonstration purposes.
 
 ## Getting Started
 KvNM aims to provide useful and detailed information about your system
-and network, however its current functionalities are very limited.
+and network.
 
 ### Requirements
 * Python 3.6+
