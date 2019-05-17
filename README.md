@@ -29,7 +29,7 @@ Python dependencies:
 
 ## Authors
 
-* **Fernando M** - https://github.com/gmork2
+* **Fernando M** - https://bitbucket.org/gmork2/
 
 ## License
 This project is licensed under the GNU GENERAL PUBLIC LICENSE
