@@ -12,6 +12,7 @@ NAME, TYPE, DEFAULT, DEVICES = 'name', 'type', 'default', 'devices'
 def add_active_connection(tree: Tree, settings: dict,
                           devices: str) -> Tree:
     """
+    Add an active connection to tree.
 
     :param tree:
     :param settings:
@@ -40,6 +41,7 @@ def add_active_connection(tree: Tree, settings: dict,
 def add_devices(conn: NetworkManager.ActiveConnection,
                 parent: Tree):
     """
+    Add device nodes to parent tree.
 
     :param conn:
     :param parent:
@@ -92,8 +94,8 @@ def add_devices(conn: NetworkManager.ActiveConnection,
 
 def get_connection_details() -> Tree:
     """
-    Return detailed information about currently active
-    connections.
+    Return a tree with detailed information about currently
+    active connections.
 
     :return:
     """
@@ -122,6 +124,7 @@ def get_connection_details() -> Tree:
 
 def get_active_connections() -> Table:
     """
+    Return a table with active connections.
 
     :return:
     """
@@ -144,6 +147,7 @@ def get_active_connections() -> Table:
 
 def get_available_connections() -> Table:
     """
+    Return a table with available connections.
 
     :return:
     """
