@@ -37,7 +37,7 @@ def add_active_connection(tree: Tree, settings: dict,
             node2['children'].append(node3)
     return node
 
-
+# TODO: Refactor function
 def add_devices(conn: NetworkManager.ActiveConnection,
                 parent: Tree):
     """
