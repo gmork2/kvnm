@@ -9,7 +9,7 @@ from kivy.core.window import Window
 
 # PEP 396 - Module Version Numbers
 __version__ = '0.1'
-__author__ = 'Fernando M'
+__author__ = 'gmork.02@gmail.com'
 
 kivy.require('1.10.1')
 resource_add_path(path.dirname(__file__))
