@@ -1,0 +1,130 @@
+[
+  {
+    "type": "title",
+    "title": "Misc"
+  },
+  {
+    "type": "string",
+    "title": "name",
+    "section": "add_connection",
+    "key": "name"
+  },
+  {
+    "type": "path",
+    "title": "load",
+    "section": "add_connection",
+    "key": "load"
+  },
+  {
+    "type": "title",
+    "title": "802-11-wireless"
+  },
+  {
+    "type": "string",
+    "title": "mode",
+    "section": "add_connection",
+    "key": "mode"
+  },
+  {
+    "type": "string",
+    "title": "security",
+    "section": "add_connection",
+    "key": "security"
+  },
+  {
+    "type": "string",
+    "title": "ssid",
+    "desc": "n-m-example-add_connection",
+    "section": "add_connection",
+    "key": "ssid"
+  },
+  {
+    "type": "title",
+    "title": "802-11-wireless-security"
+  },
+  {
+    "type": "string",
+    "title": "auth-alg",
+    "section": "add_connection",
+    "key": "auth-alg"
+  },
+  {
+    "type": "string",
+    "title": "key-mgmt",
+    "section": "add_connection",
+    "key": "key-mgmt"
+  },
+  {
+    "type": "title",
+    "title": "802-1x"
+  },
+  {
+    "type": "string",
+    "title": "eap",
+    "section": "add_connection",
+    "key": "eap"
+  },
+  {
+    "type": "string",
+    "title": "identity",
+    "desc": "eap-identity-goes-here",
+    "section": "add_connection",
+    "key": "identity"
+  },
+  {
+    "type": "string",
+    "title": "password",
+    "desc": "eap-password-goes-here",
+    "section": "add_connection",
+    "key": "password"
+  },
+  {
+    "type": "string",
+    "title": "phase2-auth",
+    "section": "add_connection",
+    "key": "phase2-auth"
+  },
+  {
+    "type": "title",
+    "title": "add_connection"
+  },
+  {
+    "type": "string",
+    "title": "id",
+    "desc": "nm-example-add_connection",
+    "section": "add_connection",
+    "key": "id"
+  },
+  {
+    "type": "string",
+    "title": "type",
+    "section": "add_connection",
+    "key": "type"
+  },
+  {
+    "type": "string",
+    "title": "uuid",
+    "section": "add_connection",
+    "key": "uuid"
+  },
+  {
+    "type": "title",
+    "title": "ipv4"
+  },
+  {
+    "type": "string",
+    "title": "method",
+    "section": "add_connection",
+    "key": "ipv4_method"
+  },
+  {
+    "type": "title",
+    "title": "ipv6"
+  },
+  {
+    "type": "string",
+    "title": "method",
+    "section": "add_connection",
+    "key": "ipv6_method"
+  }
+]
